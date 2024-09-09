@@ -54,6 +54,7 @@ public class DirectorController {
 
     @GetMapping("/edit/{id}")
     public String openEditForm(@PathVariable Long id, Model model) throws CustomException {
+
         model.addAttribute("directorRequest", directorService.findById(id));
         model.addAttribute("countryId", directorService.findById(id).getCountry().getId());
         model.addAttribute("countryList", countryService.findAll());

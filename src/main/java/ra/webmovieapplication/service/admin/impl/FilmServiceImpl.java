@@ -50,7 +50,10 @@ public class FilmServiceImpl implements IFilmService {
 
     @Override
     public Film save(FilmRequest filmRequest) throws CustomException {
+
+
         String imageDefault = "https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png?ssl=1";
+
         Set<Category> categorySet=new HashSet<>();
         Set<Actor> actorSet=new HashSet<>();
         Set<Director> directorSet=new HashSet<>();
@@ -70,6 +73,8 @@ public class FilmServiceImpl implements IFilmService {
                 throw new RuntimeException(e);
             }
         }).collect(Collectors.toSet());
+
+
 
         directorSet= filmRequest.getDirectorsId().stream().map(id-> {
             try {
@@ -109,6 +114,11 @@ public class FilmServiceImpl implements IFilmService {
     @Override
     public void delete(Integer id) {
         filmRepo.deleteById(id);
+    }
+
+    @Override
+    public List<Film> findTop5ById() {
+        return filmRepo.findTop5ByOrderByIdDesc();
     }
 
 }

@@ -84,7 +84,7 @@
 
                                 <div class="col-12">
                                     <div class="sign__group">
-                                        <select name="countryId" class="sign__selectjs" id="sign__countryOnly" >
+                                        <select  name="countryId" class="sign__selectjs" id="sign__countryOnly" >
                                             <option th:each="ct:${countryList}" th:value="${ct.id}" th:text="${ct.name}" th:selected="${ct.id==countryId}"></option>
                                         </select>
                                     </div>

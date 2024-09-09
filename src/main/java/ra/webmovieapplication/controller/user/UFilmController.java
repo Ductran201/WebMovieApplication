@@ -4,21 +4,20 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import ra.webmovieapplication.exception.CustomException;
 import ra.webmovieapplication.service.admin.IFilmService;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/film")
 @RequiredArgsConstructor
-public class HomeController {
+public class UFilmController {
     private final IFilmService filmService;
 
-    @GetMapping("/home")
-    public String home(Model model){
-        model.addAttribute("topFilmList",filmService.findTop5ById());
-        model.addAttribute("filmList",filmService.findAll());
-        return "user/index";
+    @GetMapping("/{id}")
+    public String filmDetail(Model model, @PathVariable Integer id) throws CustomException {
+        model.addAttribute("filmDetail",filmService.findById(id));
+        return "user/details";
     }
-
-
 }

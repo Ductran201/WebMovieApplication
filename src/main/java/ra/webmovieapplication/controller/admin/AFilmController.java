@@ -11,7 +11,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ra.webmovieapplication.exception.CustomException;
 import ra.webmovieapplication.model.dto.request.FilmRequest;
+import ra.webmovieapplication.model.entity.Actor;
+import ra.webmovieapplication.model.entity.Category;
+import ra.webmovieapplication.model.entity.Director;
+import ra.webmovieapplication.model.entity.Film;
 import ra.webmovieapplication.service.admin.*;
+
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/admin/film")
@@ -66,23 +72,33 @@ public class AFilmController {
 
     @GetMapping("/edit/{id}")
     public String openEditForm(@PathVariable Integer id, Model model) throws CustomException {
+
         model.addAttribute("filmRequest", filmService.findById(id));
         model.addAttribute("countryList", countryService.findAll());
         model.addAttribute("actorList", actorService.findAll());
         model.addAttribute("categoryList", categoryService.findAll());
         model.addAttribute("directorList", directorService.findAll());
+
+        model.addAttribute("setCategoryId",filmService.findById(id).getCategorySet().stream().map(Category::getId).collect(Collectors.toSet()));
+        model.addAttribute("setDirectorId",filmService.findById(id).getDirectorSet().stream().map(Director::getId).collect(Collectors.toSet()));
+        model.addAttribute("setActorId",filmService.findById(id).getActorSet().stream().map(Actor::getId).collect(Collectors.toSet()));
+        model.addAttribute("countryId",filmService.findById(id).getCountry().getId());
         return "admin/film/edit";
     }
 
     @PostMapping("/edit/{id}")
-    public String edit(@Valid @ModelAttribute FilmRequest filmRequest, BindingResult result, Model model) throws CustomException {
-
+    public String edit(@Valid @ModelAttribute FilmRequest filmRequest, BindingResult result, Model model, @PathVariable Integer id) throws CustomException {
         if (result.hasErrors()) {
-            model.addAttribute("filmRequest", filmRequest);
+//            model.addAttribute("filmRequest", filmRequest);
             model.addAttribute("countryList", countryService.findAll());
             model.addAttribute("actorList", actorService.findAll());
             model.addAttribute("categoryList", categoryService.findAll());
             model.addAttribute("directorList", directorService.findAll());
+
+            model.addAttribute("setCategoryId",filmService.findById(id).getCategorySet().stream().map(Category::getId).collect(Collectors.toSet()));
+            model.addAttribute("setDirectorId",filmService.findById(id).getDirectorSet().stream().map(Director::getId).collect(Collectors.toSet()));
+            model.addAttribute("setActorId",filmService.findById(id).getActorSet().stream().map(Actor::getId).collect(Collectors.toSet()));
+            model.addAttribute("countryId",filmService.findById(id).getCountry().getId());
             return "admin/film/edit";
         }
 

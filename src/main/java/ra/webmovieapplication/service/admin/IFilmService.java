@@ -19,5 +19,6 @@ public interface IFilmService {
 
     void delete(Integer id);
 
+    List<Film> findTop5ById();
 
 }

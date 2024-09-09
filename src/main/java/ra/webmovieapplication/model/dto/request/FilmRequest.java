@@ -1,6 +1,7 @@
 package ra.webmovieapplication.model.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -29,14 +30,15 @@ public class FilmRequest {
     @NotNull(message = "Must not be blank")
     private Long time;
     private Boolean status;
+    @NotNull(message = "Must not be blank")
     private Boolean seriesSingle;
     private Integer totalEpisode;
     private Integer countryId;
-//    @NotNull(message = "Must not be blank")
+    @NotEmpty(message = "At least one actor must be selected")
     private Set<Long> actorsId;
-//    @NotNull(message = "Must not be blank")
+    @NotEmpty(message = "At least one director must be selected")
     private Set<Long> directorsId;
-//    @NotNull(message = "Must not be blank")
+    @NotEmpty(message = "At least one category must be selected")
     private Set<Integer> categoryId;
 
 }
