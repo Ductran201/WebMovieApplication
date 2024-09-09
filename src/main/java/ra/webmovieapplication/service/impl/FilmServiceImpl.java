@@ -1,7 +1,6 @@
-package ra.webmovieapplication.service.admin.impl;
+package ra.webmovieapplication.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,8 +12,7 @@ import ra.webmovieapplication.model.entity.Category;
 import ra.webmovieapplication.model.entity.Director;
 import ra.webmovieapplication.model.entity.Film;
 import ra.webmovieapplication.repository.IFilmRepo;
-import ra.webmovieapplication.service.UploadService;
-import ra.webmovieapplication.service.admin.*;
+import ra.webmovieapplication.service.*;
 
 import java.util.HashSet;
 import java.util.List;

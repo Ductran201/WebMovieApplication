@@ -1,10 +1,9 @@
-package ra.webmovieapplication.service.admin;
+package ra.webmovieapplication.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import ra.webmovieapplication.exception.CustomException;
 import ra.webmovieapplication.model.entity.Category;
-import ra.webmovieapplication.model.entity.Country;
 
 import java.util.List;
 

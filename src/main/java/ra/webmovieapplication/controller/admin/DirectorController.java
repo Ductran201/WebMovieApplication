@@ -11,8 +11,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ra.webmovieapplication.exception.CustomException;
 import ra.webmovieapplication.model.dto.request.DirectorRequest;
-import ra.webmovieapplication.service.admin.ICountryService;
-import ra.webmovieapplication.service.admin.IDirectorService;
+import ra.webmovieapplication.service.ICountryService;
+import ra.webmovieapplication.service.IDirectorService;
 
 @Controller
 @RequestMapping("/admin/director")
