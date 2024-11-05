@@ -12,7 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ra.webmovieapplication.exception.CustomException;
 import ra.webmovieapplication.model.entity.Country;
-import ra.webmovieapplication.service.admin.ICountryService;
+import ra.webmovieapplication.service.ICountryService;
 
 @Controller
 @RequestMapping("/admin/country")

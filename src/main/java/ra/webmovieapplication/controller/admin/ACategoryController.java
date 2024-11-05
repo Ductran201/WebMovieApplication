@@ -11,7 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ra.webmovieapplication.exception.CustomException;
 import ra.webmovieapplication.model.entity.Category;
-import ra.webmovieapplication.service.admin.ICategoryService;
+import ra.webmovieapplication.service.ICategoryService;
 
 @Controller
 @RequestMapping("/admin/category")

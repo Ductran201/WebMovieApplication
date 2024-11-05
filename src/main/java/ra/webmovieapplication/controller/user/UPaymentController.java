@@ -7,17 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ra.webmovieapplication.exception.CustomException;
-import ra.webmovieapplication.service.IFilmService;
 
 @Controller
-@RequestMapping("/film")
+@RequestMapping("/user/payment")
 @RequiredArgsConstructor
-public class UFilmController {
-    private final IFilmService filmService;
+public class UPaymentController {
 
-    @GetMapping("/{id}")
-    public String filmDetail(Model model, @PathVariable Integer id) throws CustomException {
-        model.addAttribute("filmDetail",filmService.findById(id));
-        return "user/details";
+
+    @GetMapping("")
+    public String payment() throws CustomException {
+//        model.addAttribute("filmDetail",filmService.findById(id));
+        return "user/pricing";
     }
 }

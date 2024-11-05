@@ -1,4 +1,4 @@
-package ra.webmovieapplication.service.admin.impl;
+package ra.webmovieapplication.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -8,7 +8,7 @@ import ra.webmovieapplication.exception.CustomException;
 import ra.webmovieapplication.model.entity.Category;
 
 import ra.webmovieapplication.repository.ICategoryRepo;
-import ra.webmovieapplication.service.admin.ICategoryService;
+import ra.webmovieapplication.service.ICategoryService;
 
 import java.util.List;
 @Service

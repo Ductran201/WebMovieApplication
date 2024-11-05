@@ -14,8 +14,7 @@ import ra.webmovieapplication.model.dto.request.FilmRequest;
 import ra.webmovieapplication.model.entity.Actor;
 import ra.webmovieapplication.model.entity.Category;
 import ra.webmovieapplication.model.entity.Director;
-import ra.webmovieapplication.model.entity.Film;
-import ra.webmovieapplication.service.admin.*;
+import ra.webmovieapplication.service.*;
 
 import java.util.stream.Collectors;
 

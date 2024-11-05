@@ -1,4 +1,4 @@
-package ra.webmovieapplication.service.admin;
+package ra.webmovieapplication.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

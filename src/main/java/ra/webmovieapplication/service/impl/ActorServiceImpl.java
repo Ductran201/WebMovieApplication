@@ -1,4 +1,4 @@
-package ra.webmovieapplication.service.admin.impl;
+package ra.webmovieapplication.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -9,8 +9,8 @@ import ra.webmovieapplication.model.dto.request.ActorRequest;
 import ra.webmovieapplication.model.entity.Actor;
 import ra.webmovieapplication.repository.IActorRepo;
 import ra.webmovieapplication.service.UploadService;
-import ra.webmovieapplication.service.admin.IActorService;
-import ra.webmovieapplication.service.admin.ICountryService;
+import ra.webmovieapplication.service.IActorService;
+import ra.webmovieapplication.service.ICountryService;
 
 import java.util.List;
 

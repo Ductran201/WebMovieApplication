@@ -1,4 +1,4 @@
-package ra.webmovieapplication.service.admin.impl;
+package ra.webmovieapplication.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -7,12 +7,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ra.webmovieapplication.exception.CustomException;
 import ra.webmovieapplication.model.dto.request.DirectorRequest;
-import ra.webmovieapplication.model.entity.Actor;
 import ra.webmovieapplication.model.entity.Director;
 import ra.webmovieapplication.repository.IDirectorRepo;
 import ra.webmovieapplication.service.UploadService;
-import ra.webmovieapplication.service.admin.ICountryService;
-import ra.webmovieapplication.service.admin.IDirectorService;
+import ra.webmovieapplication.service.ICountryService;
+import ra.webmovieapplication.service.IDirectorService;
 
 import java.util.List;
 @Service
